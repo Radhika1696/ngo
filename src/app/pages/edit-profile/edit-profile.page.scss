@@ -1,0 +1,39 @@
+:host {
+  ion-content {
+    --background: #fff;
+  }
+
+  .auth-page .auth-content .list-form ion-item{
+    border-radius: 40px ;
+    border: 1px solid #621789 !important;
+    // height: 39px;
+    margin-bottom: 20px;
+}
+
+// ion-lable{
+//     padding-left:18px !important
+//     // font-size: 1em;
+//     // text-align: left;
+//     // margin-left: 22px;
+//     // font-size: 20px;
+//     // color: var(--ion-color-primary);
+// }
+
+ion-input{
+    padding-left:18px !important
+}
+
+.auth-page .auth-content .list-form ion-item ion-label{
+  padding-left:18px !important
+}
+
+.btn{
+  padding:10px;
+ 
+  rotate: right;
+}
+
+ .active{
+    color: #A6E721 !important;
+  }
+}

@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="tertiary"></ion-menu-button>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> 
+      <ion-text color="light" style="font-weight: bold;">
+      {{"My Account" | translate}}
+      </ion-text>
+    </ion-title>
+    
+      <ion-buttons slot="end" class="btn" (click)="logout()">
+        <ion-icon name="md-power"></ion-icon>
+      </ion-buttons>
+ 
+  </ion-toolbar>
+</ion-header>
+
+
+ 
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <ion-button (click)="goToEditPage()" style="width:100%;text-align:center;">{{"View Profile" | translate}}</ion-button><br>
+  <ion-button (click)="goToviewprofile()" style="width:100%;text-align:center;">{{"View Rating" | translate}}</ion-button><br>
+  <ion-button (click)="goTochangepassword()" style="width:100%;text-align:center;">{{"Change Password" | translate}}</ion-button><br>
+  <ion-button (click)="goToDonationList()" style="width:100%;text-align:center;">{{"Donation History" | translate}}</ion-button><br>
+  <ion-button (click)="goToReceivedList()" style="width:100%;text-align:center;">{{"Received History" | translate}}</ion-button>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="settings" slot="start" color="primary"></ion-icon>
+      <ion-label color="primary">{{"Select Language" | translate}}</ion-label>
+      <ion-select [(ngModel)]="lang"  (ionChange)="onChange()">
+        <ion-select-option value="en">English</ion-select-option>
+        <ion-select-option value="mr">मराठी</ion-select-option>
+        <ion-select-option value="hi">हिंदी</ion-select-option>
+      </ion-select>
+    </ion-item> 
+  </ion-list>
+</ion-content>
+
+<ion-footer class="animated fadeIn">
+  <ion-toolbar color="primary">
+    <ion-grid no-padding>
+      <ion-row>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-home"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToHome()">{{ 'home' | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToDonor()">{{"Donor" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToReceiver()">{{"Receiver" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contacts"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToRequest()">{{"Request" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              class="active" style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToAccount()">{{"My Account" | translate}}</a></h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

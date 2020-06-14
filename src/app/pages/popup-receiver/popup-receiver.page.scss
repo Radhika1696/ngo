@@ -1,0 +1,41 @@
+:host {
+  
+  ion-content { 
+   --background: none important;
+    background-image: url('../../../assets/img/popup.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  background-size: cover !important;
+  }
+  ion-icon{
+    color:red;
+    }
+  .background-image {
+    --background: url('../../../assets/img/popup.jpg') 0 0/100% 100% no-repeat ;
+  }
+
+  .fadeInUp{
+    border: 1px solid #0B6723;
+    border-radius: 20px;
+    background-color: #0B6723;
+    padding-left: 10px;
+    margin:5px;
+  }
+  .cross-ion{
+    position: relative;
+      top: -63px;
+      right: -16px;
+      width: 12%;
+  }
+  .searchitem{
+    border: 1px solid #0B6723;
+    border-radius: 20px;
+   
+    padding-left: 10px;
+    margin:10px;
+  }
+  .receiver_btn{
+    width: 100%; background-color: #0B6723; color:white; margin:5px 0px;
+  }
+  
+}

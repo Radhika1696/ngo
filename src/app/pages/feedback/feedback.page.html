@@ -1,0 +1,71 @@
+<ion-content padding class="animated fadeIn login auth-page">
+
+  <div class="auth-content">
+
+    <ion-item no-padding class="searchitem">
+      <ion-label position="floating">
+        <ion-icon name="md-search" item-start></ion-icon>
+        Search by Pin Code
+      </ion-label>
+      <ion-input color="#000" type="text"></ion-input>
+    </ion-item>
+
+    <div *ngFor="let data of donor_list">
+      <ion-item no-padding class="animated fadeInUp" tappable (click)="choose($event)">
+        <ion-row>
+          <p style="color:#fff;text-align: center;">{{data.name}} &nbsp;&nbsp;{{data.pincode}}</p>
+        </ion-row>
+      </ion-item>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer class="animated fadeIn">
+  <ion-toolbar color="primary">
+    <ion-grid no-padding>
+      <ion-row>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-home"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToHome()">{{ 'home' | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToDonor()">{{"Donor" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToReceiver()">{{"Receiver" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contacts"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToRequest()">{{"Request" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToAccount()">{{"My Account" | translate}}</a></h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

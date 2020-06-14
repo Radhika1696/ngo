@@ -1,0 +1,37 @@
+:host {
+  ion-content {
+    --background: #fff;
+  }
+  .background-image {
+    --background: url('../../../assets/img/bg-receiver.jpg') 0 0/100% 100% no-repeat ;
+  }
+  .fadeInUp{
+    border: 1px solid #0B6723;
+    border-radius: 10px;
+    background-color: #0B6723;
+    padding-left: 10px;
+   
+    padding:10px;
+    margin:5px;
+    color:#fff;
+    font-size:16px;
+    font-weight: 500;
+  }
+
+  .searchitem{
+    border: 1px solid #621789;
+    border-radius: 20px;
+    padding:10px;
+    padding-left: 10px;
+    margin:10px;
+  }
+  .active{
+    color: #0B6723 !important;
+  }
+
+  .pincodetext
+{
+  text-align: right;
+
+}
+}

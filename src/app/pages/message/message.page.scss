@@ -1,0 +1,56 @@
+:host {
+  ion-content {
+    --background: #fff;
+  }
+  .background-image {
+    --background: url('../../../assets/img/home.jpg') 0 0/100% 100% no-repeat ;
+  }
+  .fadeInUp{
+    border: 1px solid #621789;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    color:#621789;
+    padding-left: 10px;
+    margin:5px;
+    width:75%;
+    margin-left:25%;
+    text-align: right;
+    
+  }
+
+  .fadeInUp p 
+  {
+    text-align: right;
+  }
+
+  .messages
+  {
+    max-height: 60%;
+    overflow:scroll;
+    
+
+  }
+  .fadeInUp1{
+    border: 1px solid #621789;
+    border-radius: 20px;
+    background-color: #621789;
+    color:#ffffff;
+    padding-left: 10px;
+    margin:5px;
+    width:75%;
+    text-align: left;
+  }
+
+
+  .searchitem{
+    border: 1px solid #621789;
+    border-radius: 20px;
+   
+    padding-left: 10px;
+    margin:10px;
+  }
+
+  .active{
+    color: #0B6723 !important;
+  }
+}

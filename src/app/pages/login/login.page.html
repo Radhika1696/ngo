@@ -1,0 +1,98 @@
+<ion-content padding class="animated fadeIn login auth-page background-image">
+  <!--<video autoplay loop muted class="video-bg" playsinline webkit-playsinline>
+    <source src="assets/video/footage-hotel.mp4" type='video/mp4; codecs="h.264"'>
+    <source src="assets/video/footage-hotel.webm" type="video/webm">
+  </video>-->
+
+  <div class="auth-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown" style="margin-bottom: 35px;">
+      <!-- <div class="logo"></div> -->
+      <img class="logo animated fadeInDown" src="assets/img/logo.png">
+      <h4 no-margin>
+        <ion-text style="font-size: 25px;font-weight: bold;color:#621789;">{{"SIGN IN" | translate}}
+          <!-- <ion-text color="secondary" class="fw700"> {{ 'app.version' | translate }}</ion-text>-->
+        </ion-text>
+      </h4>
+    </div>
+
+    <!-- Login form -->
+    <form [formGroup]="onLoginForm" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-input placeholder="{{'Email' | translate}}" color="#000" type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" style="font-size: 14px;"
+        *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-input placeholder="{{'Password' | translate}}" color="" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="danger" class="text08" style="font-size: 14px;"
+        *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p>
+
+
+      <!-- <div>
+        <input type="checkbox" name="vehicle1" value="Bike" formControlName="accept">
+        <ion-label>
+          Remember
+        </ion-label>
+      </div>
+      <p ion-text color="danger" class="text08"
+        *ngIf="onLoginForm.get('accept').touched && onLoginForm.get('accept').hasError('required')">
+        <ion-text color="danger">
+          {{ 'app.label.errors.field' | translate }}
+        </ion-text>
+      </p> -->
+    </form>
+
+
+    <p text-right tappable (click)="forgotPass()" class="paz">
+      <ion-text color="#ccc">
+        {{ "Forgot Password" | translate }}
+      </ion-text>
+    </p>
+
+    <!-- <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="onSubmit()"
+        [disabled]="!onLoginForm.valid" tappable>
+        {{ 'app.button.signin' | translate }}
+      </ion-button>
+    </div> -->
+
+     <!--<div style="margin:30px 0px;text-align: center;">
+      <button type="button" class="btn ion_btn" (click)="onSubmit()" [disabled]="!onLoginForm.valid" tappable>{{"SIGN IN" | translate}} </button>
+  
+    </div>-->
+    <div style="margin:30px 0px;text-align:center">
+      <ion-button style="padding:0px !important;"
+      class="btn btndefault btndefault1 btndefault1-mobile" for="file1" type="button"
+      (click)="onSubmit()" [disabled]="!onLoginForm.valid" tappable>{{"SIGN IN" | translate}}</ion-button>
+    </div>
+
+    <p style="text-align: center;">{{"or" | translate}}</p>
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span (click)="goToRegister()" class="paz" tappable>
+        <ion-text color="">
+          {{"Don't have an Account" | translate}}? -<strong>{{"Create Account" | translate}}</strong>
+        </ion-text>
+      </span>
+    </div>
+<br>
+  <div style="text-align: center;">
+    <ion-button (click)="loginGoogle()">  
+      <img src="assets/img/google.png" (click)="closeModal()" class="cross-ion" style="width: 32px;
+      margin: -13px;">
+      <p style="margin: 0 0 0 23px;">LOGIN WITH GOOGLE</p></ion-button>
+  </div>
+  </div>
+</ion-content>

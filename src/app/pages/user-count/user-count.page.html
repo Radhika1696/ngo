@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary" class="animated fadeIn">
+    <!-- <ion-buttons slot="start" class="btn">
+      <ion-icon name="md-menu"></ion-icon>
+     <ion-menu-button color="tertiary"></ion-menu-button>
+    </ion-buttons> -->
+    <ion-title>
+      <ion-text color="light">
+        <!-- Home -->
+      </ion-text>
+    </ion-title>
+    <!-- <ion-buttons slot="end" class="btn">
+          <ion-icon name="md-log-out"></ion-icon>
+      </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn fast">
+  <div class="container">
+    <ion-row>
+      <ion-col col-6>
+        <ion-card>
+          <ion-card-header class="user_num_box">
+            <p class="user_num">{{user_data?.user_count}}</p>
+          </ion-card-header>
+          <ion-card-content class="user_count_box">
+
+            <p class="user_count">{{"User Count" | translate}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- <ion-col col-6>
+    <ion-card>
+      <p style="text-align: center;"></p>
+      <p style="text-align: center;">Registered Receivers</p>
+    </ion-card>
+  </ion-col> -->
+
+
+      <ion-col col-6 col-xs-6-offset>
+        <ion-card>
+          <ion-card-header class="user_num_box">
+            <p class="user_num">{{user_data?.successful_cases}}</p>
+          </ion-card-header>
+          <ion-card-content class="user_count_box">
+            <p class="user_count">{{"Successful cases" | translate}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <!-- <div margin-top style="text-align: center">
+  <ion-button icon-left size="medium" expand="medium"(click)="addUser()" 
+    tappable>
+    <ion-icon name="log-in"></ion-icon>
+    Register as a donor1
+  </ion-button> 
+ </div> -->
+  <div style="margin:30px 0px; text-align: center;">
+    <button type="button" class="btn ion_btn" (click)="register()">{{"REGISTER" | translate}} </button>
+
+  </div>
+  <!--<div  style="margin:30px 0px;">
+  <button type="button" class="btn ion_btn"> REGISTER <br>AS A RECEIVER</button>
+ 
+ </div>-->
+  <!--<div margin-top style="text-align: center;">
+  <ion-button icon-left size="medium" expand="medium" shape="round" color="primary" (click)="addUser()"
+    tappable>
+    
+    Register as a receiver
+  </ion-button> 
+ </div> -->
+
+  <div text-center margin-top>
+    <span (click)="goToLogin()" class="paz" tappable>
+      <ion-text color="">
+        {{"Have an Account" | translate}} ?-<strong>{{"SIGN IN" | translate}}</strong>
+      </ion-text>
+    </span>
+  </div>
+</ion-content>

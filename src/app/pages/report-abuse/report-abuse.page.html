@@ -1,0 +1,22 @@
+<!--<ion-header style="background-color: #0B6723;">
+  <ion-toolbar color="#FFA500">
+  <ion-title>Get Location</ion-title> 
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar type="text" placeholder="Find location" animated="true" (ionInput)="setFilteredItems($event)"></ion-searchbar>
+  </ion-toolbar> 
+</ion-header>-->
+
+<ion-content  class="background-image">
+  <ion-item>
+    {{msg}}
+  </ion-item>
+  <div style="text-align: right;">
+    <img src="assets/img/cross.png" (click)="closeModal()" class="cross-ion">
+    </div>
+</ion-content>

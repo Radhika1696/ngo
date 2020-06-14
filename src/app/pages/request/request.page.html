@@ -1,0 +1,108 @@
+
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <p style="color:#fff" *ngIf="!localstoragepincode && localstorageid">{{"Your pincode is not updated. Please update pincode in edit profile." | translate}}</p>
+  <form [formGroup]="requestForm" class="list-form">
+
+
+ 
+    <p style="color:#fff">{{"Type:" | translate}}</p>
+    <ion-radio-group (ionChange)="onChangeHandler($event)">
+      <ion-item style="background-color: #fff;">
+        <ion-label>{{"Donor" | translate}}</ion-label>
+        <ion-radio value="donor" checked></ion-radio>
+      </ion-item>
+      <ion-item style="background-color: #fff;">
+        <ion-label>{{"Receiver" | translate}}</ion-label>
+        <ion-radio value="receiver"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+
+    <p style="color:#fff;font-size: 17px;
+margin-top: 37px;">{{"Submit New Request" | translate}}</p>
+    <ion-item no-padding class="animated fadeInUp">
+      <!-- <ion-label position="floating">
+        <ion-icon name="lock" item-start></ion-icon>
+      OTP
+      </ion-label> -->
+      <ion-textarea color="#fff" type="text" rows="10" cols="170" formControlName="msg"></ion-textarea>
+
+    </ion-item>
+    <p ion-text style="font-size: 14px;" class="text08" *ngIf="requestForm.get('msg').touched && requestForm.get('msg').hasError('required')">
+      <ion-text color="danger">
+        {{"This field is required" | translate}}
+      </ion-text>
+    </p>
+    <p style="color:#fff;font-size: 14px;
+margin-top: 10px;">{{"Please avoid cash request" | translate}}</p>
+
+
+    <!-- <div class="btn btn-responsive">
+<ion-button  size="small" shape="round" expand="small" color="secondary" (click)="request()"
+    [disabled]="!requestForm.valid" tappable>
+    Submit
+  </ion-button>
+</div>-->
+<div style="margin:30px 0px;text-align:center">
+  <ion-button style="padding:0px !important;"
+  class="btn btndefault btndefault1 btndefault1-mobile" for="file1" type="button"
+  (click)="request()" [disabled]="!requestForm.valid" tappable>{{"SUBMIT" | translate}}</ion-button>
+</div>
+    <!--<div style="margin:30px 0px; text-align: center;">
+      <button type="button" (click)="request()" [disabled]="!requestForm.valid" tappable
+        class="btn ion_btn">{{"SUBMIT" | translate}}</button>
+
+    </div>-->
+
+  </form>
+</ion-content>
+
+<ion-footer class="animated fadeIn">
+  <ion-toolbar color="primary">
+    <ion-grid no-padding>
+      <ion-row>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-home"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToHome()">Home</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToDonor()">Donor</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToReceiver()">Receiver</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contacts"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              class="active" style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToRequest()">Request</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToAccount()">My Account</a></h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

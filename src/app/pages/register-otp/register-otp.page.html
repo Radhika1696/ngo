@@ -1,0 +1,59 @@
+<!--<ion-header>
+  <ion-toolbar color="primary">
+     <ion-title>Get Location</ion-title> 
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar type="text" placeholder="Find location" animated="true" (ionInput)="setFilteredItems($event)"></ion-searchbar>
+  </ion-toolbar> 
+</ion-header>-->
+
+<ion-content padding class="animated fadeIn fast bg-light">
+  <p style="text-align: center; color:#621789; margin-top: 10px;">{{"Please enter the OTP sent to you on your number" | translate}}</p>
+  <div style="text-align: right;">
+    <img src="assets/img/cross.png" (click)="closeModal()" class="cross-ion">
+    </div>
+    <form [formGroup]="OtpForm" class="list-form">
+
+
+
+    <ion-item no-padding class="animated fadeInUp">
+      <!--<ion-label position="floating">
+        <ion-icon name="lock" item-start></ion-icon>
+        {{"OTP" | translate}}
+      </ion-label>-->
+      <ion-input color="#fff" type="text" formControlName="otp">
+      </ion-input>
+    </ion-item>
+    <p ion-text class="text08" style="font-size: 14px;"  
+      *ngIf="OtpForm.get('otp').touched && OtpForm.get('otp').hasError('required')">
+      <ion-text color="danger">
+        {{"This field is required" | translate}}
+      </ion-text>
+    </p>
+
+    <!-- <div class="btn btn-responsive">
+    <ion-button  size="small" shape="round" expand="small" color="primary" (click)="changepassword()"
+      [disabled]="!changePasswordForm.valid" tappable>
+      Submit
+    </ion-button>
+  </div> -->
+  <div style="margin:30px 0px;">
+  <ion-button style="width: 100%;" (click)="changepassword()" [disabled]="!OtpForm.valid" tappable>Verify OTP</ion-button>
+</div>
+<div style="text-align: center;">
+<a style=" color:#621789;" (click)="resendOtp()">Resend OTP</a>
+</div>
+
+    <!-- <div style="margin:30px 0px;">
+      <button type="button" (click)="changepassword()" [disabled]="!OtpForm.valid" tappable
+        class="btn ion_btn" >{{"SUBMIT" | translate}}</button>
+
+    </div>-->
+  </form>
+
+</ion-content>

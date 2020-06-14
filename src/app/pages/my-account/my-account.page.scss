@@ -1,0 +1,30 @@
+:host {
+  ion-content {
+    --background: #fff;
+  }
+
+  .btn{
+    padding:10px;
+    font-size: 150%;
+    rotate: right;
+  }
+
+  .fadeInUp{
+    border: 1px solid #621789;
+    border-radius: 20px;
+    background-color: #621789;
+    padding-left: 10px;
+    margin:5px;
+  }
+
+  .searchitem{
+    border: 1px solid #621789;
+    border-radius: 20px;
+   
+    padding-left: 10px;
+    margin:10px;
+  }
+  .active{
+    color: #0B6723 !important;
+  }
+}

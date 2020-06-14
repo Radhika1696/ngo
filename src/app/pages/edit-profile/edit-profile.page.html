@@ -1,0 +1,193 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light" style="font-weight: bold;">
+      {{"View Profile" | translate}}
+    </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <!-- <div padding-horizontal text-center class="animated fadeInDown" style="margin-bottom:10px;">
+    <img [src]="capturedSnapURL1" alt="profile" style="height: 130px;">
+       
+          <ion-button style="padding:0px !important;"
+          class="btn btndefault btndefault1 btndefault1-mobile" for="file1" type="button"
+          (click)="selectImage()">{{  "Select Photo" | translate }}</ion-button><br>
+
+  </div> -->
+
+<div class="container" style="width: 100%;padding-left: 0px;padding-right: 0px;">
+  <ion-card-content  style="text-align: center;">
+    <div>
+      <img [src]="capturedSnapURL1" alt="profile" style="height: 130px;">
+    </div>
+  <!--<ion-button icon-left color="secondary" (click)=" selectImage()">
+      <ion-icon name="photos"></ion-icon>
+      {{  "Select Photo" | translate }}
+    </ion-button>-->
+    <ion-button style="padding:0px !important;"
+            class="btn btndefault btndefault1 btndefault1-mobile" for="file1" type="button"
+            (click)="selectImage()">{{  "Select Photo" | translate }}</ion-button><br>
+  </ion-card-content>
+</div>
+
+
+<ion-content padding>
+  <div class="auth-content">
+    <form [formGroup]="editProfileForm" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="contact" item-start></ion-icon>
+          {{'Name' | translate}}
+        </ion-label>
+        <ion-input color="#000" type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <div ion-text class="text08" style="font-size: 14px;"
+        *ngIf="editProfileForm.get('name').touched && editProfileForm.get('name').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </div>
+
+
+
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="phone-portrait" item-start></ion-icon>
+          {{"Pincode" | translate}} 
+        </ion-label>
+        <ion-input color="#000" type="text" formControlName="pincode"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" style="font-size: 14px;"
+        *ngIf="editProfileForm.get('pincode').touched && editProfileForm.get('pincode').hasError('required')">
+        <ion-text color="danger">
+          
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p>
+
+
+
+      <!-- <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="md-card" item-start></ion-icon>
+          {{"Adhar/PAN CARD Number" | translate}}
+          <ion-icon style="color:red" name="star"></ion-icon>
+        </ion-label>
+       
+        <ion-input color="#000" type="text" formControlName="aadhar_pan_no"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" style="font-size: 14px;"
+        *ngIf="editProfileForm.get('aadhar_pan_no').touched && editProfileForm.get('aadhar_pan_no').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p> -->
+
+      <p style="color:#000">{{"Type:" | translate}}</p>
+      <ion-radio-group (ionChange)="onChangeHandler1($event)">
+        <ion-row>
+          <ion-col>
+        <ion-item style="background-color: #fff;">
+          <ion-radio value="donor" [checked]="user_type == 'donor' ? true : false"></ion-radio>
+          <ion-label>{{"Donor" | translate}}</ion-label>
+         
+        <!-- </ion-item> -->
+        <!-- <ion-item style="background-color: #fff;"> -->
+          <ion-radio value="receiver" [checked]="user_type == 'receiver' ? true : false"></ion-radio>
+          <ion-label>{{"Receiver" | translate}}</ion-label>
+         
+        </ion-item>
+        </ion-col>
+        </ion-row>
+      </ion-radio-group>
+
+      <p>{{"Status:" | translate}}</p>
+      <ion-radio-group (ionChange)="onChangeHandler($event)">
+        <ion-row>
+          <ion-col>
+            <ion-item style="background-color: #fff;">
+              <ion-radio value="active" [checked]="user_status == 'active' ? true : false"></ion-radio>
+              <ion-label>{{"Activate" | translate}}</ion-label>
+             
+              <ion-radio value="deactive" [checked]="user_status != 'active' ? true : false" ></ion-radio>
+              <ion-label>{{"Deactivate" | translate}}</ion-label>
+            </ion-item>
+
+          </ion-col>
+        </ion-row>
+
+      
+
+      </ion-radio-group>
+
+    </form>
+
+    <div style="margin:30px 0px;text-align:center">
+      <ion-button style="padding:0px !important;"
+      class="btn btndefault btndefault1 btndefault1-mobile" for="file1" type="button"
+      (click)="edit()" tappable [disabled]="!editProfileForm.valid">{{"SAVE" | translate}}</ion-button>
+    </div>
+
+    <!--<div style="margin:30px 0px; text-align: center;">
+      <button type="button" class="btn ion_btn" (click)="edit()" tappable [disabled]="!editProfileForm.valid">{{"SAVE" | translate}}</button>
+  
+    </div>-->
+
+  </div>
+</ion-content>
+
+<ion-footer class="animated fadeIn">
+  <ion-toolbar color="primary">
+    <ion-grid no-padding>
+      <ion-row>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-home"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToHome()">{{ 'home' | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToDonor()">{{"Donor" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToReceiver()">{{"Receiver" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contacts"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToRequest()">{{"Request" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+             class="active" style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToAccount()">{{"My Account" | translate}}</a></h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

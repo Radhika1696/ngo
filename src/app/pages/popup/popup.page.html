@@ -1,0 +1,36 @@
+<!--<ion-header>
+  <ion-toolbar color="primary">
+     <ion-title>Get Location</ion-title> 
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ <ion-toolbar color="primary">
+    <ion-searchbar type="text" placeholder="Find location" animated="true" (ionInput)="setFilteredItems($event)"></ion-searchbar>
+  </ion-toolbar> 
+</ion-header>-->
+
+<ion-content padding class="animated fadeIn login   background-image">
+ 
+
+  <!-- </div> -->
+  
+
+   <div *ngIf="localstoragepincode == pincode || !localstorageid">
+    <ion-item>
+      {{msg}}
+    </ion-item>
+    <div style="text-align: right;">
+    <img src="assets/img/cross.png" (click)="closeModal()" class="cross-ion">
+    </div>
+    <ion-button style="width: 100%;" (click)="goToviewprofile()">{{"View Rating" | translate}}</ion-button><br>
+    <ion-button style="width: 100%;" (click)="goTomessage()">{{"Message Receiver" | translate}}</ion-button><br>
+    <ion-button style="width: 100%;" (click)="goTomarkreceived()">{{"Mark as Received" | translate}}</ion-button>
+    <ion-button style="width: 100%;" (click)="goToreportabuse()">{{"Report Abuse" | translate}}</ion-button>
+  </div>
+  <ion-item *ngIf="localstoragepincode != pincode && localstorageid">
+    {{"Select Donor / Receiver from your pincode only" | translate}}
+  </ion-item>
+</ion-content>

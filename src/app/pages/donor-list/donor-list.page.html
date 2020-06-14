@@ -1,0 +1,84 @@
+<ion-content padding class="animated fadeIn login auth-page background-image">
+  <p  *ngIf="!localstoragepincode && localstorageid">{{"Your pincode is not updated. Please update pincode in edit profile." | translate}}</p>
+  <div class="auth-content">
+
+
+    <ion-searchbar style="margin-top: 30px;" primary [(ngModel)]="searchQuery" (keyup)="updateList($event)" show-cancel="true"
+      [placeholder]='"key" | translate'>
+    </ion-searchbar>
+
+<p style="font-size: 11px;
+font-weight: 600;margin: 20px 0px;"><ion-icon name="star"></ion-icon>{{"Towards Society never encourages cash donations" | translate}}</p>
+
+    <div *ngFor="let data of donor_list">
+        
+        <ion-row no-padding class="animated fadeInUp" tappable
+        (click)="choose($event,data.user_id,data.msg,data.id, data.pincode)">
+            <ion-col size="6">
+              {{data.name}} 
+             </ion-col>
+             <ion-col class="pincodetext" size="6">
+              {{data.pincode}}
+             </ion-col> 
+            
+        </ion-row>
+        
+    </div>
+
+    <div *ngIf="donor_list?.length<1">
+      <p>{{"No Records Found" | translate}}</p>
+    </div>
+
+
+
+  </div>
+</ion-content>
+
+<ion-footer class="animated fadeIn">
+  <ion-toolbar color="primary">
+    <ion-grid no-padding>
+      <ion-row>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-home"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToHome()">{{ 'home' | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              class="active"style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToDonor()">{{"Donor" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToReceiver()">{{"Receiver" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="2" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contacts"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToRequest()">{{"Request" | translate}}</a></h4>
+        </ion-col>
+
+        <ion-col size="3" no-padding>
+          <p style="text-align: center;margin:5px !important;font-size: 20px;">
+            <ion-icon slot="start" name="md-contact"></ion-icon>
+          </p>
+          <h4 style="text-align: center; margin:0px !important;font-size:15px !important;"><a
+              style="color:#fff;text-decoration:none;cursor: pointer;" (click)="goToAccount()">{{"My Account" | translate}}</a></h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

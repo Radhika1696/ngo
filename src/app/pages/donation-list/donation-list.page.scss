@@ -1,0 +1,36 @@
+:host {
+  ion-content {
+    --background: #fff;
+  }
+  .background-image {
+    --background: url('../../../assets/img/histroy.jpg') 0 0/100% 100% no-repeat ;
+  }
+  .fadeInUp{
+    border: 1px solid #621789;
+    border-radius: 10px;
+    background-color: #621789;
+    padding-left: 10px;
+    margin:5px;
+  }
+
+  .searchitem{
+    border: 1px solid #621789;
+    border-radius: 20px;
+   
+    padding-left: 10px;
+    margin:10px;
+  }
+  .searchbar-input.sc-ion-searchbar-md {
+    padding-left: unset;
+    padding-right: unset;
+    -webkit-padding-start: 55px !important;
+    padding-inline-start: 55px !important;
+    -webkit-padding-end: 55px !important;
+    padding-inline-end: 55px !important;
+    border: 3px solid gray !important;
+    border-radius: 30px !important;
+}
+.active{
+  color: #0B6723 !important;
+}
+}

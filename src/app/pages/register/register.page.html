@@ -1,0 +1,162 @@
+<ion-content padding class="animated fadeIn login auth-page background-image">
+  
+
+  <div class="auth-content">
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <!-- <div class="logo"></div> -->
+      <img class="logo animated fadeInDown" src="assets/img/logo.png">
+    </div>
+
+
+
+    <div padding-horizontal text-center class="animated fadeInDown" style="margin-bottom:10px;">
+      <img [src]="capturedSnapURL1" alt="profile" style="height: 130px;">
+         <!--<button _ngcontent-qhl-c8="" style="padding:0px !important;"
+            class="btn btndefault btndefault1 btndefault1-mobile" for="file1" type="button"
+            (click)="selectImage()">Upload Photo</button>-->
+            <ion-button style="padding:0px !important;"
+            class="btn btndefault btndefault1 btndefault1-mobile" for="file1" type="button"
+            (click)="selectImage()">{{'Upload Photo' | translate}}</ion-button><br>
+
+    </div>
+    <br>
+
+    <!-- Register form   (keydown)="MACAddressInput($event)"-->
+   <!-- <h4 style="color:#000">{{"Type:" | translate}}</h4> -->
+    <ion-radio-group (ionChange)="onChangeHandler($event)">
+      <ion-row>
+        <ion-col>
+          <ion-item style="background-color: #fff;">
+            <ion-label>{{"Donor" | translate}}</ion-label>
+            <ion-radio value="donor" checked></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item style="background-color: #fff;">
+            <ion-label>{{"Receiver" | translate}}</ion-label>
+            <ion-radio value="receiver"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+     
+    </ion-radio-group>
+    <form [formGroup]="onRegisterForm" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+           
+        <ion-input placeholder="{{'Name' | translate}}" color="#000" type="text" (keypress)="onKeyPress($event)" formControlName="name"></ion-input>
+      </ion-item>
+      <div ion-text class="text08" style="font-size: 14px;"
+        *ngIf="onRegisterForm.get('name').touched && onRegisterForm.get('name').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </div>
+
+    
+
+      <ion-item no-padding class="animated fadeInUp">
+        
+        <ion-input placeholder="{{'Email' | translate}} " color="#000" type="email" email="true" formControlName="email"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" style="font-size: 14px;"
+        *ngIf="onRegisterForm.get('email').touched && onRegisterForm.get('email').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-input placeholder="{{'Password' | translate}}" color="#000" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="danger" class="text08" style="font-size: 14px;"
+        *ngIf="onRegisterForm.get('password').touched && onRegisterForm.get('password').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-input placeholder="{{'Pincode' | translate}}" color="#000" type="text" formControlName="pincode"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" style="font-size: 14px;"
+        *ngIf="onRegisterForm.get('pincode').touched && onRegisterForm.get('pincode').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-input placeholder="{{'Phone' | translate}}" color="#000" type="text" formControlName="contact_no"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" style="font-size: 14px;"
+        *ngIf="onRegisterForm.get('contact_no').touched && onRegisterForm.get('contact_no').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p>
+
+      <!-- <ion-item no-padding class="animated fadeInUp">
+        <ion-input placeholder="{{'Adhar/PAN CARD Number' | translate}}" color="#000" type="text" formControlName="aadhar_pan_no"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" style="font-size: 14px;"
+        *ngIf="onRegisterForm.get('aadhar_pan_no').touched && onRegisterForm.get('aadhar_pan_no').hasError('required')">
+        <ion-text color="danger">
+          {{"This field is required" | translate}}
+        </ion-text>
+      </p> -->
+
+
+      <div>
+        <input type="checkbox" name="vehicle1" value="Bike" formControlName="accept">
+        <ion-label>
+         <a style="color:#000" (click)="openModal()">
+            Accept Terms & Conditions
+          </a>
+         
+        </ion-label>
+      </div>
+      <p ion-text color="danger" class="text08" style="font-size: 14px;"
+        *ngIf="onRegisterForm.get('accept').touched && onRegisterForm.get('accept').hasError('required')">
+        <ion-text color="danger">
+          {{ "This field is required" | translate }}
+        </ion-text>
+      </p>
+    </form>
+
+    <!-- <div margin-top>
+      <ion-button icon-left size="full" expand="medium" shape="round" color="primary" (click)="addUser()"
+        [disabled]="!onRegisterForm.valid" tappable>
+        Register
+      </ion-button>
+    </div> -->
+
+    <!--  <div style="margin:30px 0px;text-align:center">
+      <button type="button" class="btn ion_btn" (click)="addUser()"  [disabled]="!onRegisterForm.valid" tappable>{{"REGISTER" | translate}} </button>
+  
+    </div>-->
+    <div style="margin:30px 0px;text-align:center">
+    <ion-button style="padding:0px !important;"
+    class="btn btndefault btndefault1 btndefault1-mobile" for="file1" type="button"
+    (click)="addUser()"  [disabled]="!onRegisterForm.valid" tappable>{{"REGISTER" | translate}}</ion-button>
+  </div>
+
+    <!-- Other links -->
+    <!-- <div text-center margin-top>
+      <span (click)="goToLogin()" tappable>
+        <ion-text color="dark">
+          <strong>I have an account!</strong>
+        </ion-text>
+      </span>
+    </div> -->
+
+    <div text-center margin-top>
+      <span (click)="goToLogin()" class="paz" tappable>
+        <ion-text color="">
+         {{"Already have an Account" | translate}} ?-<strong>{{"SIGN IN" | translate}}</strong>
+        </ion-text>
+      </span>
+    </div>
+
+  </div>
+</ion-content>

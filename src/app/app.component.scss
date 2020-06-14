@@ -1,0 +1,18 @@
+:host {
+    ion-content {
+        --background: linear-gradient(135deg, var(--ion-color-primary), var(--ion-color-primary));
+    }
+    .ionmenus{
+            border-bottom: 2px solid #fff;
+
+
+
+
+    }
+
+    ion-list {
+        &.list-md {
+            padding: 0;
+        }
+    }
+}

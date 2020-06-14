@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary" class="animated fadeIn">
+    <ion-buttons slot="start">
+      <ion-menu-button color="tertiary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        Home
+      </ion-text>
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn fast">
+  <div class="container">
+<ion-row>
+  <ion-col col-6>
+    <ion-card><h3>hii</h3></ion-card>
+  </ion-col>
+
+  <ion-col col-6>
+    <ion-card><h3>hii</h3></ion-card>
+  </ion-col>
+</ion-row>
+
+<ion-col col-6 col-6-offset>
+  <ion-card><p>hii</p></ion-card>
+</ion-col>
+</div>
+
+<div margin-top>
+  <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="addUser()" 
+    tappable>
+    <!-- <ion-icon name="log-in"></ion-icon> -->
+    Register as a donor
+  </ion-button> 
+ </div>
+
+ <div margin-top>
+  <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="addUser()"
+    tappable>
+    <!-- <ion-icon name="log-in"></ion-icon> -->
+    Register as a receiver
+  </ion-button> 
+ </div>
+
+<div text-center margin-top>
+  <span (click)="goToLogin()" class="paz" tappable>
+    <ion-text color="">
+      Don't have an Account -<strong>{{ 'app.button.login' | translate }}</strong>
+    </ion-text>
+  </span>
+</div>
+</ion-content>
